@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Motion UI</title>
+    <link rel="stylesheet" href="motionUI.css">
+</head>
+
+<body>
+    <div id="page">
+        <header class="title-header">
+            <ul>
+                <li><a href="#what_is_motion_ui">Какво е Motion UI?</a></li>
+                <li><a href="examples">Примери на анимации направени чрез CSS</a></li>
+                <li><a href="library_motion_ui">Библиотеката Motion UI</a></li>
+           </ul>
+         <!--  <div class="dropdown-content">
+              <a href="#">Забавен ефект на мишкатa</a>
+              <a href="#">Разкритие</a>
+              <a href="#">Техниката - squigglevision</a>
+            </div>
+          </div> -->
+            <p class="title">Motion UI - създаване на CSS анимации</p>
+        </header>
+        <script src="motionUI.js"></script>
+       
+        <section class="page_contain">
+            <h1>Какво е Motion UI?</h1>
+            <article class="whatIsMotionUI">
+                <p id="text_1">
+                    В непрекъснато променящият се свят на технологии
+                    способността на хората да се съсредоточават постоянно намаля.
+                    Любопитен факт е, че човек преди е можел от 12 секунди до 2000 да се фокусира,
+                    а капацитетът сега е сведен до минимума да е 8 секунди.
+                    Именно затова дизайнерите измислят все по - впечатляващи интерфейси с анимации,
+                    за да грабнат окото на клиента. Като споменахме думата анимация,
+                    нека да кажем какво означава тя или по - точно CSS анимациите.
+                    Анимациите и преходите са движещи се ефекти, които помагат на потребителя да разпознае,
+                    когато нещо се промени на сайта, например, кликне върху бутон и на екрана се появява нова
+                    информация.
+                    Добавянето на движение към приложенията и уебсайтовете подобрява изживяването на потребителя и му
+                    помага
+                    да разбере съдържанието по по-интуитивен начин.
+                </p>
+                <div class="tenor-gif-embed" data-postid="16295845" data-share-method="host" data-aspect-ratio="1.67539" data-width="30%">
+                <a href="https://tenor.com/view/concentrate-tap-glass-lisa-the-simpsons-gif-16295845">Concentrate Tap Glass GIF</a>from 
+                <a href="https://tenor.com/search/concentrate-gifs">Concentrate GIFs</a></div> 
+                <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            </article>
+            <h1>Примери на анимации направени чрез CSS</h1>
+            <article class="examples">
+                <h2>1. Забавен ефект на мишката</h2>
+                <div>
+                    <p>
+                        Това е CSS ефект, който следва мишката по екрана.
+                        Може да бъде полезен, когато искаме да привлечем вниманието към елемент на страничката.
+                        Ето малко примерен код:
+                    </p>
+                    
+                    <div>
+                        <label for="html_title_label">HTML:</label>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="5" cols="60">
+        <div class="demo">
+        <div class="perspective-container">
+        <div class="card"></div>
+        </div>
+        </div>                              
+                    </textarea>
+                    <div>
+                        <label for="css_title_label">CSS:</label>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="10" cols="60">
+        .demo { 
+           background-color: hsl(207, 9%, 19%);
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           height: 100vh;
+           width: 100%;
+         }
+         
+         .perspective-container {
+           perspective: 800px;
+         }
+         .card {
+           background-image: url(https://media.giphy.com/media/sIIhZliB2McAo/giphy.gif);
+           background-size: cover;
+           box-shadow: 0 0 140px 10px rgba(0,0,0,.5);
+           position: relative;
+           height: 300px;
+           width: 500px;
+           overflow: hidden; /* Try removing this to see how the sheen works! */
+           --sheenX: 0; /* Set these with JavaScript */
+           --sheenY: 0;
+         }
+         .card::after {
+           content: "";
+           position: absolute;
+           top: -400px;
+           right: -400px;
+           bottom: -400px;
+           left: -400px;
+           background: linear-gradient(217deg, rgba(255,255,255,0), rgba(255,255,255,0) 35%, rgba(255,255,255,0.25) 45%, rgba(255,255,255,.25) 50%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%);
+           transform: translateX(var(--sheenX)) translateY(var(--sheenY));
+         }                                                       
+                    </textarea>
+                    <div>
+                        <label for="js_title_label">JavaScript:</label>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="10" cols="100">
+              document.onmousemove = handleMouseMove  
+              function handleMouseMove(event) {
+                const height = window.innerHeight;
+                const width = window.innerWidth;
+                // Creates angles of (-20, -20) (left, bottom) and (20, 20) (right, top)
+                const yAxisDegree = event.pageX / width * 40 - 20;
+                const xAxisDegree = event.pageY / height * -1 * 40 + 20;
+                target.style.transform = `rotateY(${yAxisDegree}deg) rotateX(${xAxisDegree}deg)`;
+                // Set the sheen position
+                setSheenPosition(event.pageX / width, event.pageY / width);
+              }
+              nction handleMouseMove(event) {
+              const height = window.innerHeight;
+              const width = window.innerWidth;
+              // Creates angles of (-20, -20) (left, bottom) and (20, 20) (right, top)
+              const yAxisDegree = event.pageX / width * 40 - 20;
+              const xAxisDegree = event.pageY / height * -1 * 40 + 20;
+              target.style.transform = `rotateY(${yAxisDegree}deg) rotateX(${xAxisDegree}deg)`;
+              // Set the sheen position
+              setSheenPosition(event.pageX / width, event.pageY / width);
+              }
+                    </textarea>
+                    <div>
+                    <img src="https://cdn.mos.cms.futurecdn.net/5qYneUZun3grjR5PJBZuAH-320-80.gif" 
+                    alt="A CSS animation example that moves when the mouse moves over it" 
+                    class=" example_1" onerror="if(this.src &amp;&amp; this.src.indexOf('missing-image.svg') !== -1){return true;};this.parentNode.replaceChild(window.missingImage(),this)" 
+                    srcset="https://cdn.mos.cms.futurecdn.net/5qYneUZun3grjR5PJBZuAH-320-80.gif 320w, 
+                    https://cdn.mos.cms.futurecdn.net/5qYneUZun3grjR5PJBZuAH-480-80.gif 480w, https://cdn.mos.cms.futurecdn.net/5qYneUZun3grjR5PJBZuAH-650-80.gif 650w, 
+                    https://cdn.mos.cms.futurecdn.net/5qYneUZun3grjR5PJBZuAH-970-80.gif 970w, https://cdn.mos.cms.futurecdn.net/5qYneUZun3grjR5PJBZuAH-1024-80.gif 1024w, 
+                    https://cdn.mos.cms.futurecdn.net/5qYneUZun3grjR5PJBZuAH-1200-80.gif 1200w, https://cdn.mos.cms.futurecdn.net/5qYneUZun3grjR5PJBZuAH-1920-80.gif 1920w" 
+                    sizes="(min-width: 1000px) 970px, calc(100vw - 40px)" data-original-mos="https://cdn.mos.cms.futurecdn.net/5qYneUZun3grjR5PJBZuAH.gif" 
+                    data-pin-media="https://cdn.mos.cms.futurecdn.net/5qYneUZun3grjR5PJBZuAH.gif">
+                </div>
+                    <p>
+                        Получаваме карта, която се обръща към мишката, докато блясъкът се движи в обратната посока
+                        отгоре.
+                        Това създава приятен, привличащ вниманието ефект.
+                    </p>            
+                </div>
+                <h2>2. Разкритие </h2>
+                <p>
+                    Ефектите, с които се разкрива анимирано съдържание, се оказват все по - популярни и ако бъдат използвани правилно, 
+                    те могат да уловят фокуса на потребителя. Виждали сме това и преди: цветен блок расте от едната или от другата 
+                    страна хоризонтално или вертикално и след това се оттегля към противоположната страна, този път разкривайки 
+                    някакъв текст или изображение отдолу. Тази концепция изглежда само привидно сложна. Първо, позиционираме обекта.
+                    В случай че е текст е, по – добре да зададем автоматична височина и ширина. Трябва да дефинираме и източник 
+                    на трансформация, в случай на родителския елемент, който искаме да използваме за началната позиция. Тъй като елементът 
+                    трябва да бъде скрит първоначално, ще приложим трансформация на мащаба по подходящата ос. След това ще използваме
+                    псевдо елемент, за да маскираме нашия родител, задавайки източник на трансформацията на противоположната опция.
+                    Остана да подредим анимациите, като използваме функциите или за синхронизиране, или закъснения, за да компенсираме всяка.
+                </p>
+                <h2>3. Техниката - squigglevision</h2>
+                <div>
+                <p>    <!-- id="text"-->
+                    SVG филтрите предоставят страхотен начин за постигане на естественост, усещане за ръчно
+                    изобразяване и избягване на някои
+                    от ограниченията, които ни карат да усещаме само плоскостта на CSS. Анимирането на филтрите може
+                    допълнително да засили ефекта.
+                    Примерен случай: Squigglevision не е технически термин, но със сигурност сме го виждали да се
+                    използва в анимационните филми.
+                    Идеята е, че ръбовете на тези анимирани елементи са не само донякъде назъбени и грубо издялани,
+                    но тези груби ръбове бързо се променят, кадър по кадър, което ги кара да се чувстват така,
+                    сякаш са изтръгнати от страниците на скицник и пренесени в живот.
+                    За да постигнем този ефект, можем да включим SVG на нашата страница с множество филтри и леки
+                    вариации в нивата
+                    на турбуленция за всеки. След това ще настроим нашата времева линия за анимация,
+                    като извикаме всеки филтър в собствен ключов кадър. Важно е да си поиграем с времетраенето,
+                    тъй като очакваме анимацията да се почувства „скачаща“, но не искаме да е толкова бавна,
+                    че да се почувства несвързана, или толкова бърза, че да е неподходяща.
+                </p>
+                <div>
+                    <label for="script_title_label">Код за примера:</label>
+                </div>
+                <textarea disabled id="example_box" name="example_box" rows="5" cols="60">
+                    #parent{
+                        .child{
+                             animation: animationName 1.5s ease-in-out 1 forwards;
+                        @for $i from 1 through 20{
+                             &:nth-of-type(#{$i}){
+                        animation-delay:#{$i/10}s;
+                                         }
+                        }
+                            }
+                        }                                                     
+                </textarea>
+                <iframe width="100%" height="350" scrolling="no" frameborder="no" data-lazy-priority="low"
+                    data-lazy-src="https://codepen.io/cobra_winfrey/embed/EJmREe?height=265&amp;theme-id=default&amp;default-tab=css,result"
+                    class="paywall" data-lazy-report="lazily loaded with low priority"
+                    src="https://codepen.io/cobra_winfrey/embed/EJmREe?height=265&amp;theme-id=default&amp;default-tab=css,result">
+                </iframe>
+                </div>
+                <h2>4. Преобръщащи се надписи </h2>
+                <div>
+                    <p>
+                        Надписът "Игра на годината" на Google включва закачлива CSS анимация на началната страница,
+                        като заглавните думи се преобръщат и блъскат една в друга. Ето как е било направено:
+                    </p>
+                    <div>
+                        <label for="script_title_label">Код за примера:</label>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="20" cols="100">
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                    <title>Off Kilter Text Animation</title>
+                    <link rel="stylesheet" type="text/css" href="styles.css"/>
+                    <script src="code.js"></script>
+                    </head>
+                    <body>
+                      <h1 class="animate backwards">The Animated Title</h1>
+                      <h1 class="animate forwards">The Animated Title</h1>
+                      <h1 class="animate mixed">The Animated Title </h1>
+                    </body>
+                    </html>
+                    
+                    window.addEventListener("load", function(){
+                        var delay = 2;
+                        var nodes = document.querySelectorAll
+                    (".animate");
+                        for(var i=0; i<nodes.length; i++){
+                            var words = nodes[i].innerText.split(" ");
+                            nodes[i].innerHTML = "";
+                    for(var i2=0; i2<words.length; i2++){
+                                var item = document.createElement("span");
+                                item.innerText = words[i2];
+                                var calc = (delay+((nodes.length + i2)/3));
+                        item.style.animationDelay = calc+"s";
+                                nodes[i].appendChild(item);
+                    }
+                        }
+                    });
+                    
+                    .animate span{
+                        display: block;
+                        position: relative;
+                        text-align: center;
+                    }
+                    
+                    .animate.backwards > span{
+                        animation: animateBackwards 1s ease-in-out 
+                    forwards;
+                    }
+                    .animate.forwards > span{
+                        animation: animateForwards 1s ease-in-out 
+                    forwards;
+                    }
+                    
+                    .animate.mixed > span:nth-child(even){
+                        animation: animateBackwards 1s ease-in-out 
+                    forwards;
+                    }
+                    .animate.mixed > span:nth-child(odd){
+                        animation: animateForwards 1s ease-in-out 
+                    forwards;
+                    }
+                    
+                    @keyframes animateForwards {
+                        from { top: 0; transform: rotate(0deg); }
+                        to { top: .9em; transform: rotate(-15deg); }
+                    }
+                    @keyframes animateBackwards {
+                        from { top: 0; transform: rotate(0deg); }
+                        to { top: 1em; transform: rotate(25deg); }
+                    }                
+                    </textarea>
+                </div>
+                <h2>5. Мехурчета</h2>
+                <div>
+                    <p>
+                        CSS балонната анимация, която е предложена на 7UP,
+                        е красив пример за внедряването на особеностите на марката в дизайна на уебсайта.
+                        Анимацията се състои от няколко елемента: SVG „чертеж“ на балончетата и след това две анимации,
+                        приложени към всеки балон.
+                        Първата анимация променя непрозрачността на балончето и го премества вертикално в полето за
+                        изглед,
+                        а втората създава ефекта на трептене за допълнителен реализъм.
+                        Отместванията се обработват чрез насочване към всеки балон и прилагане на забавяне на анимацията
+                        с различна продължителност.
+                        За да създадем нашите балончета, ще използваме SVG.
+                        В нашия SVG създаваме два слоя мехурчета: един за по-големите и един за по-малките.
+                    </p>
+                    <div>
+                        <label for="script_title_label">Код за примера:</label>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="10" cols="60">
+                     <g class="bubbles-large" stroke-width="7">
+                     <g transform="translate(10 940)">
+                     <circle cx="35" cy="35" r="35"/>
+                     </g>
+                     ...
+                     </g>
+                     <g class="bubbles-small" stroke-width="4">
+                     <g transform="translate(147 984)">
+                     <circle cx="15" cy="15" r="15"/>
+                     </g>
+                     </g>
+                     ...
+                     </g>
+                    </textarea>
+                    <div>
+                        <p>
+                            Tрябва да приложим анимациите към отделните елементи.
+                        </p>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="10" cols="60">
+                     <g>
+                     <g transform="translate(10 940)">
+                <circle cx="35" cy="35" r="35"/>
+                     </g>
+                     </g>              
+                    </textarea>
+                    <div>
+                        <p>
+                            Започваме с преместване на мехурчетата нагоре по екрана и промяна на тяхната
+                            непрозрачност, за да ги избледнеем в началото и в края на анимацията.
+                        </p>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="10" cols="60">
+                        @keyframes up {
+                            0% {
+                            opacity: 0;
+                            }
+                            10%, 90% {
+                            opacity: 1;
+                            }
+                            100% {
+                            opacity: 0;
+                            transform: translateY(-1024px);
+                            }
+                          }
+                                      
+                    </textarea>
+                    <div>
+                        <p>
+                            За да приложим анимация към нашите балончета, ще използваме групите,
+                            които направихме, и помощта на nth-of-type, за да идентифицираме всяка група балончета
+                            поотделно.
+                            Започваме с прилагане на стойност на непрозрачност към балончетата и свойството will-change,
+                            за да използваме хардуерно ускорение.
+                        </p>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="10" cols="60">
+                        .bubbles-large > g {
+                            opacity: 0;
+                          will-change: transform, opacity;}
+                          .bubbles-large g:nth-of-type(1) {...}
+                          ...
+                          .bubbles-small g:nth-of-type(10) {...}                                      
+                    </textarea>
+                    <div>
+                        <p>
+                            Искаме да запазим всички времена и забавяния на анимацията в рамките на няколко секунди
+                            едно от друго и да ги настроим да се повтарят безкрайно.
+                        </p>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="10" cols="60">
+                    .bubbles-large g:nth-of-type(1) {
+                        animation: up 6.5s infinite; }
+                      .bubbles-large g:nth-of-type(1) circle {
+                        animation: wobble 3s infinite ease-in-out; }
+                      ...
+                      bubbles-small g:nth-of-type(9) circle {
+                        animation: wobble 3s 275ms infinite ease-in-out; }
+                      .bubbles-small g:nth-of-type(10) {
+                      animation: up 6s 900ms infinite;}                                  
+                    </textarea>
+                </div>
+                <h2>6. Скролираща мишка</h2>
+                <div>
+                    <p>
+                        Една фина анимация на скролираща мишка може да даде насока на потребителя,
+                        когато за първи път попадне на уебсайта.
+                        Въпреки че това може да се постигне с помощта на HTML елементи и свойства,
+                        по-подходящо за рисуването е да се използва SVG.
+                    </p>
+                    <a href="https://codepen.io/matchboxhero/pen/gGdJYo" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/gGdJYo" class="link"><strong>Код за
+                            примера:</strong></a><span class="link"></span>
+                </div>
+                <h2>7. Анимирано изписване на надписи</h2>
+                <div>
+                    <p>
+                        Някои сайтове използват следната анимационна техника, при която текстът изглежда ръчно изписан.
+                        Като за начало се създава SVG. И от тук следват два подхода: конвертираме текста в пътеки,
+                        за да ги анимираме, или използваме SVG текст. Нека създадем анимация с ключов кадър.
+                        Единствената функция,
+                        която трябва да изпълнява, е да промени stroke-dashoffset. След като създадохме нашата анимация,
+                        необходимо е да приложим стойностите,
+                        чрез които искаме да анимираме. Задаваме stroke-dasharray, който ще създаде пропуски в щриха.
+                        Искаме да настроим нашия щрих да бъде достатъчно голяма стойност, за да покрие целия елемент,
+                        като накрая компенсираме тирето с дължината на щриха.
+                        Магията се случва, когато приложим нашата анимация. Чрез анимиране на отместването ние извеждаме
+                        щриха в изглед – създавайки ефект на рисуване.
+                    </p>
+                    <strong>Код за примера:</strong>
+                    <a href="https://codepen.io/matchboxhero/pen/KXoxwO?editors=1100" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/KXoxwO?editors=1100" class="link">
+                        <strong>Пътека</strong></a><span class="link"></span><strong> и </strong>
+                    <a href="https://codepen.io/matchboxhero/pen/oGVJXe?editors=1100" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/oGVJXe?editors=1100" class="link">
+                        <strong>Текст</strong></a><span class="link"></span>
+                </div>
+                <h2>8. Движение чрез изобразяване на птици в полет</h2>
+                <div>
+                    <p>
+                        При този тип анимация започваме с напълно прави векторни линии, рисуваме всеки кадър от анимацията,
+                        изобразявайки птицата в различно състояние на полет. След това манипулираме векторните точки и закръгляме линиите и ръбовете. 
+                        Накрая поставяме всяка рамка в кутия с еднакъв размер и ги поставяме една до друга, и
+                        експортираме файла като SVG. Настройката на HTML е наистина проста. Просто трябва да поставим всяка птица в контейнер, 
+                        за да приложим две анимации – една да накара птицата да лети, а другата да я мести по екрана.
+                    </p>
+                    <strong>Код за примера: </strong><a href="https://codepen.io/matchboxhero/pen/XeQWNw" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/XeQWNw" class="link"><strong>Една
+                            птичка</strong>
+                    </a><span class="link"></span><strong> или </strong>
+                    <a href="https://codepen.io/matchboxhero/pen/RLebOY?editors=1100" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/RLebOY?editors=1100" class="link"><strong>Цяло
+                            ято</strong></a><span class="link"></span>
+                </div>
+                <h2>9. Анимиране на иконката тип "хамбургер"</h2>
+                <div>
+                    <p>
+                        Тази анимация се използва навсякъде в мрежата, превръщайки иконката тип "хамбургер", направена
+                        от три линии, в иконка тип "Х" за затваряне.
+                        До съвсем скоро по – голямата част от реализациите на тази анимация са били постигнати с помощта
+                        на HTML елементи,
+                        но всъщност SVG е много по – подходящ и няма нужда да раздуваме кода с бутони с множество
+                        интервали.
+                    </p>
+                    <strong>Код за примера: </strong>
+                    <a href="https://codepen.io/matchboxhero/pen/XexMRo" rel="stylesheet" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/XexMRo"
+                        class="link"><strong>Spans</strong></a><span class="link">
+                    </span><strong> и </strong>
+                    <a href="https://codepen.io/matchboxhero/pen/boJdBp" rel="stylesheet" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/boJdBp" class="link"><strong>SVG</strong></a><span
+                        class="link"></span>
+                </div>
+                <h2>10. Иконка за зареждане</h2>
+                <div>
+                    <p>
+                        На следващото демо е показана анимирана икона за зареждане, която се състои от четири кръга.
+                        Кръговете нямат запълване, но имат редуващи се цветове.
+                        В CSS файла задаваме някои основни свойства на всичките кръгове и след това използваме
+                        селектора: nth-of-type,
+                        за да приложим различен stroke-dasharray към всеки кръг.
+                        След това трябва да създадем анимацията чрез ключов кадър. Трябва да завъртим кръга на 360
+                        градуса.
+                        Като поставим трансформацията на 50% от отметката на анимацията, кръгът също се завърта обратно
+                        на първоначалната си позиция.
+                        След като сме създали анимацията, трябва да я приложим към кръговете. Задаваме име на
+                        анимацията, продължителност, функция за брой итерации и синхронизация.
+                    </p>
+                    <a href="https://codepen.io/matchboxhero/pen/bomWGK?editors=1100" rel="stylesheet" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/bomWGK?editors=1100" class="link">
+                        <strong>Код за примера:</strong></a><span class="link"></span>
+                </div>
+                <h2>11. Случайно появяващи се букви</h2>
+                <div>
+                    <p>
+                        За да изпълним тази CSS анимация, първата стъпка е да построим структурата на HTML документа.
+                        Тя трябва да съдържа секциите head и body. Докато head се използва за зареждане на външни CSS и
+                        JavaScript ресурси,
+                        body трябва да съдържа видимото съдържание на страницата, създадено в следващата стъпка.
+                        Съдържанието на страницата се поставя вътре в основния блок, за да осигури предимство за лесен
+                        достъп.
+                        Текстовият елемент има приложен клас наслагване, така че да може да бъде препратен от CSS и
+                        JavaScript
+                        за прилагане на текстовата анимация. Множество елементи могат да имат приложена анимация чрез
+                        използване на класа наслагване.
+                    </p>
+                    <div>
+                        <label for="html_title_label">HTML:</label>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="5" cols="50">
+                      <main>
+                      <h2 class="overlay">
+                        This is a story all about how...
+                      </h2>
+                      </main>
+                    </textarea>
+                    <p>
+                        Последната част от HTML е да дефинираме фоновия видео елемент. Не всички браузъри могат да
+                        поддържат всеки видео стандарт,
+                        поради което е необходимо да се посочват различни източници. Браузърът ще покаже първия
+                        източник, който може да поддържа.
+                        Трябва да обърнем внимание как видео елементът има приложени атрибути за автоматично пускане,
+                        заглушаване и повторение,
+                        така че автоматично да се възпроизвежда и повтаря без звук.
+                    </p>
+                    <div>
+                        <label for="html_title_label">HTML:</label>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="10" cols="50">
+                        <video autoplay muted loop>
+                            <source src="http://techslides.com/ 
+                        demos/sample-videos/small.webm" type="video/
+                        webm" />
+                            <source src="http://techslides.com/
+                        demos/sample-videos/small.mp4" type="video/
+                        mp4" />
+                            <source src="http://techslides.com/
+                        demos/sample-videos/small.ogv" type="video/
+                        ogg" />
+                            <source src="http://techslides.com/
+                        demos/sample-videos/small.3gp" type="video/3gp" 
+                        />
+                    </textarea>
+                    <p>
+                        Създаваме нов файл, наречен style.css. Първата стъпка в този файл е да се дефинират свойствата
+                        на основния блок за съдържание.
+                        Настройките по подразбиране за шрифт и цвят се прилагат за наследеното съдържание.
+                        Автоматичните стойности се прилагат към страничните полета, така че наследеното съдържание да
+                        изглежда централно подравнено.
+                    </p>
+                    <div>
+                        <label for="css_title_label">CSS:</label>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="10" cols="50">
+                        main {
+                            font-family: Helvetica, sans-serif;
+                            color: #fff;
+                            padding: 2em;
+                            width: 75%;
+                            min-height: 100vh;
+                            margin: 0 auto 0 auto; }
+                        
+                        video {
+                            position: fixed;
+                            top: 50%;
+                            left: 50%;
+                            min-width: 100%;
+                            min-height: 100%;
+                            z-index: -9999;
+                            transform: translateX(-50%) 
+                            translateY(-50%);
+                            background: #000; }
+
+                        .overlay span{
+                            position: relative;
+                            opacity: 0;
+                            top: 1em;
+                            animation: animateOverlay 1s ease-in-
+                        out forwards;
+                        }
+                        .overlay span:nth-child(4n) { animation-delay: 
+                        0s; }
+                        .overlay span:nth-child(4n+1) { animation-
+                        delay: 1s; }
+                        .overlay span:nth-child(4n+3) { animation-
+                        delay: 2s; }
+                        .overlay span:n
+
+                        @keyframes animateOverlay {
+                            to {
+                          opacity: 1;
+                          top: 0;
+                          } }
+                    </textarea>
+                    <p>
+                        Остана ни да съставим JavaScript файловете.
+                    </p>
+                    <div>
+                        <label for="js_title_label">JavaScript:</label>
+                    </div>
+                    <textarea disabled id="example_box" name="example_box" rows="10" cols="50">
+                        indow.addEventListener("load", function(){
+                        var nodes = document.
+                        querySelectorAll(".overlay");
+                        for(var i=0; i<nodes.length; i++){
+                        } 
+                        });
+                    
+                        var words = nodes[i].innerText;
+                        var html = "";
+                        var i2=0; i2<words.length; i2++){
+	                    ords[i2] == " ")html += 
+                        s[i2];
+		                 html += 
+                        an>"+words[i2]+"</span>"
+                        
+                        s[i].innerHTML = html;
+                    </textarea>
+                </div>
+                <h2>12. Анимация на снеговалеж</h2>
+                <div>
+                    <p>
+                        Пример за CSS анимация на падащ сняг се прави с помощта на SVG и техниката е много подобна на начина,
+                        по който създадохме балончетата по-рано. Като за начало създаваме два слоя кръгове вътре в SVG,
+                        след което анимираме тези два слоя, като транслираме стойността Y на ключовия кадър.
+                        Прилагаме анимацията към всеки слой вместо към отделни елементи и използваме повторно същата
+                        анимация и за двата слоя.
+                    </p>
+                    <a href="https://codepen.io/matchboxhero/pen/JrLJeb?editors=1100" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/JrLJeb?editors=1100" class="link">
+                        <strong>Код за примера:</strong></a><span class="link"></span>
+                </div>
+                <h2>13. Анимация на пулсиращи кръгчета</h2>
+                <div>
+                    <p>
+                      Пулсиращата анимация, използвана в уебсайта на Peek-a-Beat, e проста, но ефективна, и не е трудназа възпроизвеждане.
+                      Състои се от три кръга в SVG – ние просто анимираме техните мащаби и непрозрачност.
+                    </p>
+                    <a href="https://codepen.io/matchboxhero/pen/pWLOQb?editors=1100" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/pWLOQb?editors=1100" class="link">
+                        <strong>Код за примера:</strong></a><span class="link"></span>
+                </div>
+                <h2>14. Текст за грешка</h2>
+                <div>
+                    <p>
+                        Бъг ефектите са идеални за придаване на анархичен или обезпокоен вид на уебсайта.
+                        Може да използваме CSS ключови кадри за създаване на този вид анимация.
+                        В CSS ключовите кадри се записват като проценти на времевата линия на кода за анимацията.
+                        Използва се и CSS Grid, за да позиционираме елементите на екрана.
+                    </p>
+                </div>
+                <h2>15. Движещ се фон</h2>
+                <div>
+                    <p>
+                        Уебсайтът A Violent Act използва маскиране и фини движения, за да привлече вниманието на
+                        потребителя.
+                        По-голямата част от работата тук е в настройката и създаването на SVG.
+                    </p>
+                    <a href="https://codepen.io/matchboxhero/pen/oGqJyd?editors=1100" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/oGqJyd?editors=1100" class="link">
+                        <strong>Код за примера:</strong></a><span class="link"></span>
+                </div>
+                <h2>16. Цветни преходи</h2>
+                <div>
+                    <p>
+                        Уебсайтът на Dalnk използва наистина ефективна техника за преход между страниците.
+                        Преходът е прост и се състои от SVG, съдържащ редица различни по размер правоъгълници с различни
+                        цветове,
+                        разположени един върху друг. Анимацията се състои от трансформиране на позицията Х по ширина на
+                        SVG.
+                        След това използвайки nth-of-type, прилагаме закъснения, компенсирайки всяко със 75 ms спрямо
+                        последното,
+                        за да създадем плавен преход.
+                    </p>
+                    <a href="https://codepen.io/matchboxhero/pen/XeEYJV?editors=1100" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/XeEYJV?editors=1100" class="link">
+                        <strong>Код за примера:</strong></a><span class="link"></span>
+                </div>
+                <h2>17. Разширяващ се акцент</h2>
+                <div>
+                    <p>
+                        Това е много проста, но наистина ефективна техника. Преходът се осъществява с помощта на
+                        ::before pseudo element.
+                        Като в началото, псевдоелементът се поставя в долната част, докато обхваща цялата ширина, но
+                        само няколко пиксела във височина.
+                        Когато се взаимодейства с елемента, ширината и височината на псевдо елемента се променя на 105%
+                        от размера на родителя,
+                        както и преходът на цвета на текста.
+                    </p>
+                    <a href="https://codepen.io/matchboxhero/pen/XeEYyy?editors=1100" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/XeEYyy?editors=1100" class="link">
+                        <strong>Код за примера:</strong></a><span class="link"></span>
+                </div>
+                <h2>18. Появяващо се заглавие</h2>
+                <div>
+                    <p>
+                        Ensemble Correspondances използва проста анимация, за да предаде движение в музиката. Дизайнът
+                        свободно представлява нотна музика.
+                    </p>
+                    <a href="https://codepen.io/matchboxhero/pen/0293b121fcb9ccbe55ca3251a5bbde81" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/0293b121fcb9ccbe55ca3251a5bbde81" class="link">
+                        <strong>Код за примера:</strong></a><span class="link"></span>
+                </div>
+                <h2>19. Анимация с въртящо се меню</h2>
+                <div>
+                    <p>
+                        Анимираният бутон на менюто е създаден с помощта на SVG. Анимацията се появява, когато
+                        потребителят премине с мишката през бутона на менюто.
+                        Извършват се два прехода: външният кръг около менюто се върти на 360 градуса, а иконката в
+                        центъра променя цвета си.
+                        Най-сложната част е функцията за време. Използвайки cubic-bezier, за да получим пълен контрол,
+                        можем да стартираме анимацията бавно,
+                        да се състезаваме по време на средната част и да я забавим отново в края.
+                    </p>
+                    <a href="https://codepen.io/matchboxhero/pen/XeEYJV?editors=1100" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/XeEYJV?editors=1100" class="link">
+                        <strong>Код за примера:</strong></a>
+                </div>
+                <h2>20. Разширяващи се ъгълчета</h2>
+                <div>
+                    <p>
+                        В някои уебсайтове има визуален начин да се покажат категориите на елементите от сайта.
+                        Всяка от картите чрез които се показват има триъгълно ъгълче с определен цвят, който представя
+                        категорията,
+                        а след това при задържане на мишката се показва името и на самата нея. Ефектът се постига с
+                        помощта на псевдоелементите ::before и ::after,
+                        промяна на размера на триъгълника и избледняване на името, когато се премине с мишката през
+                        елемента.
+                    </p>
+                    <a href="https://codepen.io/matchboxhero/pen/WZaObN?editors=1100" target="blank"
+                        data-url="https://codepen.io/matchboxhero/pen/WZaObN?editors=1100" class="link">
+                        <strong>Код за примера:</strong></a><span class="link"></span>
+                </div>
+            </article>
+            <h1>Библиотеката Motion UI на Sass</h1>
+            <article>
+                <div>
+                    <p>
+                     След десетките примери за анимация, които изписахме с помощта на CSS, идва ред на Мotion UI.
+                     Motion UI е самостоятелна библиотека на Sass за създаване на потребителски CSS преходи и прототипиране на анимации
+                     на потребителски интерфейс. Той включва повече от дузина анимационни и преходни класове, които правят прототипирането лесно.
+                     В допълнение към това, Motion UI ни дава много свобода, тъй като броят на начините, по които можем да прилагаме
+                     и смесваме класовете, е буквално неограничен. Всъщност библиотеката е нова в света на уеб дизайна.
+                     Тя е създадена от една от водещите компании за уеб дизайн, ZURB, като част от тяхната рамка Foundations for Apps.
+                     До октомври 2017 г. те преработиха библиотеката Motion UI и я направиха с отворен код. Тук започва цялото забавление.
+                     Много разработчици били просто зашеметени, разбирайки до каква висока степен дизайнът на UI Motion опростява живота им.
+                    </p>
+                    <p>В следващите линкове са основни и полезни неща от библиотеката:</p>
+                    <a href="https://github.com/foundation/motion-ui/blob/master/docs/animations.md" target="blank"
+                        data-url="https://github.com/foundation/motion-ui/blob/master/docs/animations.md" class="link">
+                        <strong>Линк 1:</strong></a><span class="link"></span>
+                    <a href="https://github.com/foundation/motion-ui/blob/master/docs/classes.md#transition-classes"
+                        target="blank"
+                        data-url="https://github.com/foundation/motion-ui/blob/master/docs/classes.md#transition-classes"
+                        class="link">
+                        <strong>Линк 2:</strong></a><span class="link"></span>
+                </div>
+            </article>
+        </section>
+    </div>
+</body>
