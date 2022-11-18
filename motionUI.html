@@ -210,74 +210,78 @@
                     <div>
                         <label for="script_title_label">Код за примера:</label>
                     </div>
-                    <textarea disabled id="example_box" name="example_box" rows="20" cols="100">
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                    <title>Off Kilter Text Animation</title>
-                    <link rel="stylesheet" type="text/css" href="styles.css"/>
-                    <script src="code.js"></script>
-                    </head>
-                    <body>
-                      <h1 class="animate backwards">The Animated Title</h1>
-                      <h1 class="animate forwards">The Animated Title</h1>
-                      <h1 class="animate mixed">The Animated Title </h1>
-                    </body>
-                    </html>
-                    
-                    window.addEventListener("load", function(){
-                        var delay = 2;
-                        var nodes = document.querySelectorAll
-                    (".animate");
-                        for(var i=0; i<nodes.length; i++){
-                            var words = nodes[i].innerText.split(" ");
-                            nodes[i].innerHTML = "";
-                    for(var i2=0; i2<words.length; i2++){
-                                var item = document.createElement("span");
-                                item.innerText = words[i2];
-                                var calc = (delay+((nodes.length + i2)/3));
-                        item.style.animationDelay = calc+"s";
-                                nodes[i].appendChild(item);
-                    }
-                        }
-                    });
-                    
-                    .animate span{
-                        display: block;
-                        position: relative;
-                        text-align: center;
-                    }
-                    
-                    .animate.backwards > span{
-                        animation: animateBackwards 1s ease-in-out 
-                    forwards;
-                    }
-                    .animate.forwards > span{
-                        animation: animateForwards 1s ease-in-out 
-                    forwards;
-                    }
-                    
-                    .animate.mixed > span:nth-child(even){
-                        animation: animateBackwards 1s ease-in-out 
-                    forwards;
-                    }
-                    .animate.mixed > span:nth-child(odd){
-                        animation: animateForwards 1s ease-in-out 
-                    forwards;
-                    }
-                    
-                    @keyframes animateForwards {
-                        from { top: 0; transform: rotate(0deg); }
-                        to { top: .9em; transform: rotate(-15deg); }
-                    }
-                    @keyframes animateBackwards {
-                        from { top: 0; transform: rotate(0deg); }
-                        to { top: 1em; transform: rotate(25deg); }
-                    }                
-                    </textarea>
-                    <div>
-                        <img src=""
+                    <div id="example_4_form">
+                        <textarea disabled id="example_box" name="example_box" rows="20" cols="100">
+                            <!DOCTYPE html>
+                            <html>
+                            <head>
+                            <title>Off Kilter Text Animation</title>
+                            <link rel="stylesheet" type="text/css" href="styles.css"/>
+                            <script src="code.js"></script>
+                            </head>
+                            <body>
+                              <h1 class="animate backwards">The Animated Title</h1>
+                              <h1 class="animate forwards">The Animated Title</h1>
+                              <h1 class="animate mixed">The Animated Title </h1>
+                            </body>
+                            </html>
+                            
+                            window.addEventListener("load", function(){
+                                var delay = 2;
+                                var nodes = document.querySelectorAll
+                            (".animate");
+                                for(var i=0; i<nodes.length; i++){
+                                    var words = nodes[i].innerText.split(" ");
+                                    nodes[i].innerHTML = "";
+                            for(var i2=0; i2<words.length; i2++){
+                                        var item = document.createElement("span");
+                                        item.innerText = words[i2];
+                                        var calc = (delay+((nodes.length + i2)/3));
+                                item.style.animationDelay = calc+"s";
+                                        nodes[i].appendChild(item);
+                            }
+                                }
+                            });
+                            
+                            .animate span{
+                                display: block;
+                                position: relative;
+                                text-align: center;
+                            }
+                            
+                            .animate.backwards > span{
+                                animation: animateBackwards 1s ease-in-out 
+                            forwards;
+                            }
+                            .animate.forwards > span{
+                                animation: animateForwards 1s ease-in-out 
+                            forwards;
+                            }
+                            
+                            .animate.mixed > span:nth-child(even){
+                                animation: animateBackwards 1s ease-in-out 
+                            forwards;
+                            }
+                            .animate.mixed > span:nth-child(odd){
+                                animation: animateForwards 1s ease-in-out 
+                            forwards;
+                            }
+                            
+                            @keyframes animateForwards {
+                                from { top: 0; transform: rotate(0deg); }
+                                to { top: .9em; transform: rotate(-15deg); }
+                            }
+                            @keyframes animateBackwards {
+                                from { top: 0; transform: rotate(0deg); }
+                                to { top: 1em; transform: rotate(25deg); }
+                            }                
+                            </textarea>
+                            <div>
+                                <img src="example_4.png", alt="axample_4">
+                            </div>
+
                     </div>
+                    
                 </div>
                 <h2>5. Мехурчета</h2>
                 <div>
