@@ -16,17 +16,6 @@ body {
 	font-family: "Montserrat", sans-serif;
 }
 
-p
-{
-	font-family:"Playfair display", serif;
-}
-
-/*#example_4_form
-{
-	padding-left: 50%;
-
-}*/
-
 .tenor-gif-embed {
 	display: flex;
 	flex-direction: column;
@@ -42,14 +31,31 @@ p
 	border: 3px solid #a3cef1;
 	border-radius: 5px;
 	box-sizing: border-box;
-
-}
+}	
 
 #text_1 {
 
 	padding-right: 40%;
 }
 
+#example_4
+{
+	margin-left: 50%;
+	margin-top: -24%;
+}
+
+#bubbles_gif
+{
+	margin-left: 50%;
+	margin-top: -30%;
+}
+#letters_gif
+{
+	margin-left: 50%;
+	margin-top: -35%;
+}
+
+/*navigation */
 ul {
 	list-style-type: none;
 	margin: 0;

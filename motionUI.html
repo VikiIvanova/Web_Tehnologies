@@ -210,78 +210,74 @@
                     <div>
                         <label for="script_title_label">Код за примера:</label>
                     </div>
-                    <div id="example_4_form">
                         <textarea disabled id="example_box" name="example_box" rows="20" cols="100">
-                            <!DOCTYPE html>
-                            <html>
-                            <head>
-                            <title>Off Kilter Text Animation</title>
-                            <link rel="stylesheet" type="text/css" href="styles.css"/>
-                            <script src="code.js"></script>
-                            </head>
-                            <body>
-                              <h1 class="animate backwards">The Animated Title</h1>
-                              <h1 class="animate forwards">The Animated Title</h1>
-                              <h1 class="animate mixed">The Animated Title </h1>
-                            </body>
-                            </html>
-                            
-                            window.addEventListener("load", function(){
-                                var delay = 2;
-                                var nodes = document.querySelectorAll
-                            (".animate");
-                                for(var i=0; i<nodes.length; i++){
-                                    var words = nodes[i].innerText.split(" ");
-                                    nodes[i].innerHTML = "";
-                            for(var i2=0; i2<words.length; i2++){
-                                        var item = document.createElement("span");
-                                        item.innerText = words[i2];
-                                        var calc = (delay+((nodes.length + i2)/3));
-                                item.style.animationDelay = calc+"s";
-                                        nodes[i].appendChild(item);
-                            }
-                                }
-                            });
-                            
-                            .animate span{
-                                display: block;
-                                position: relative;
-                                text-align: center;
-                            }
-                            
-                            .animate.backwards > span{
-                                animation: animateBackwards 1s ease-in-out 
-                            forwards;
-                            }
-                            .animate.forwards > span{
-                                animation: animateForwards 1s ease-in-out 
-                            forwards;
-                            }
-                            
-                            .animate.mixed > span:nth-child(even){
-                                animation: animateBackwards 1s ease-in-out 
-                            forwards;
-                            }
-                            .animate.mixed > span:nth-child(odd){
-                                animation: animateForwards 1s ease-in-out 
-                            forwards;
-                            }
-                            
-                            @keyframes animateForwards {
-                                from { top: 0; transform: rotate(0deg); }
-                                to { top: .9em; transform: rotate(-15deg); }
-                            }
-                            @keyframes animateBackwards {
-                                from { top: 0; transform: rotate(0deg); }
-                                to { top: 1em; transform: rotate(25deg); }
-                            }                
-                            </textarea>
-                            <div>
-                                <img src="example_4.png", alt="axample_4">
-                            </div>
-
-                    </div>
-                    
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <title>Off Kilter Text Animation</title>
+            <link rel="stylesheet" type="text/css" href="styles.css"/>
+            <script src="code.js"></script>
+            </head>
+            <body>
+              <h1 class="animate backwards">The Animated Title</h1>
+              <h1 class="animate forwards">The Animated Title</h1>
+              <h1 class="animate mixed">The Animated Title </h1>
+            </body>
+            </html>
+            
+            window.addEventListener("load", function(){
+                var delay = 2;
+                var nodes = document.querySelectorAll
+            (".animate");
+                for(var i=0; i<nodes.length; i++){
+                    var words = nodes[i].innerText.split(" ");
+                    nodes[i].innerHTML = "";
+            for(var i2=0; i2<words.length; i2++){
+                        var item = document.createElement("span");
+                        item.innerText = words[i2];
+                        var calc = (delay+((nodes.length + i2)/3));
+                item.style.animationDelay = calc+"s";
+                        nodes[i].appendChild(item);
+            }
+                }
+            });
+            
+            .animate span{
+                display: block;
+                position: relative;
+                text-align: center;
+            }
+            
+            .animate.backwards > span{
+                animation: animateBackwards 1s ease-in-out 
+            forwards;
+            }
+            .animate.forwards > span{
+                animation: animateForwards 1s ease-in-out 
+            forwards;
+            }
+            
+            .animate.mixed > span:nth-child(even){
+                animation: animateBackwards 1s ease-in-out 
+            forwards;
+            }
+            .animate.mixed > span:nth-child(odd){
+                animation: animateForwards 1s ease-in-out 
+            forwards;
+            }
+            
+            @keyframes animateForwards {
+                from { top: 0; transform: rotate(0deg); }
+                to { top: .9em; transform: rotate(-15deg); }
+            }
+            @keyframes animateBackwards {
+                from { top: 0; transform: rotate(0deg); }
+                to { top: 1em; transform: rotate(25deg); }
+            }                
+                        </textarea>
+                <div id="example_4">
+                <img src="./img/example_4.png", alt="example_4_image", width="98%">
+                </div>
                 </div>
                 <h2>5. Мехурчета</h2>
                 <div>
@@ -328,6 +324,9 @@
                      </g>
                      </g>              
                     </textarea>
+                    <div id="bubbles_gif">
+                        <img src="./img/giphy.gif", alt="example_bubbles">
+                    </div>
                     <div>
                         <p>
                             Започваме с преместване на мехурчетата нагоре по екрана и промяна на тяхната
@@ -511,19 +510,15 @@
                         <label for="html_title_label">HTML:</label>
                     </div>
                     <textarea disabled id="example_box" name="example_box" rows="10" cols="50">
-                        <video autoplay muted loop>
-                            <source src="http://techslides.com/ 
-                        demos/sample-videos/small.webm" type="video/
-                        webm" />
-                            <source src="http://techslides.com/
-                        demos/sample-videos/small.mp4" type="video/
-                        mp4" />
-                            <source src="http://techslides.com/
-                        demos/sample-videos/small.ogv" type="video/
-                        ogg" />
-                            <source src="http://techslides.com/
-                        demos/sample-videos/small.3gp" type="video/3gp" 
-                        />
+    <video autoplay muted loop>
+        <source src="http://techslides.com/ 
+    demos/sample-videos/small.webm" type="video/webm" />
+        <source src="http://techslides.com/
+    demos/sample-videos/small.mp4" type="video/mp4" />
+        <source src="http://techslides.com/
+    demos/sample-videos/small.ogv" type="video/ogg" />
+        <source src="http://techslides.com/
+    demos/sample-videos/small.3gp" type="video/3gp"/>
                     </textarea>
                     <p>
                         Създаваме нов файл, наречен style.css. Първата стъпка в този файл е да се дефинират свойствата
@@ -536,45 +531,45 @@
                         <label for="css_title_label">CSS:</label>
                     </div>
                     <textarea disabled id="example_box" name="example_box" rows="10" cols="50">
-                        main {
-                            font-family: Helvetica, sans-serif;
-                            color: #fff;
-                            padding: 2em;
-                            width: 75%;
-                            min-height: 100vh;
-                            margin: 0 auto 0 auto; }
-                        
-                        video {
-                            position: fixed;
-                            top: 50%;
-                            left: 50%;
-                            min-width: 100%;
-                            min-height: 100%;
-                            z-index: -9999;
-                            transform: translateX(-50%) 
-                            translateY(-50%);
-                            background: #000; }
+             main {
+                 font-family: Helvetica, sans-serif;
+                 color: #fff;
+                 padding: 2em;
+                 width: 75%;
+                 min-height: 100vh;
+                 margin: 0 auto 0 auto; }
+             
+             video {
+                 position: fixed;
+                 top: 50%;
+                 left: 50%;
+                 min-width: 100%;
+                 min-height: 100%;
+                 z-index: -9999;
+                 transform: translateX(-50%) 
+                 translateY(-50%);
+                 background: #000; }
 
-                        .overlay span{
-                            position: relative;
-                            opacity: 0;
-                            top: 1em;
-                            animation: animateOverlay 1s ease-in-
-                        out forwards;
-                        }
-                        .overlay span:nth-child(4n) { animation-delay: 
-                        0s; }
-                        .overlay span:nth-child(4n+1) { animation-
-                        delay: 1s; }
-                        .overlay span:nth-child(4n+3) { animation-
-                        delay: 2s; }
-                        .overlay span:n
+             .overlay span{
+                 position: relative;
+                 opacity: 0;
+                 top: 1em;
+                 animation: animateOverlay 1s ease-in-
+             out forwards;
+             }
+             .overlay span:nth-child(4n) { animation-delay: 
+             0s; }
+             .overlay span:nth-child(4n+1) { animation-
+             delay: 1s; }
+             .overlay span:nth-child(4n+3) { animation-
+             delay: 2s; }
+             .overlay span:n
 
-                        @keyframes animateOverlay {
-                            to {
-                          opacity: 1;
-                          top: 0;
-                          } }
+             @keyframes animateOverlay {
+                 to {
+               opacity: 1;
+               top: 0;
+               } }
                     </textarea>
                     <p>
                         Остана ни да съставим JavaScript файловете.
@@ -583,23 +578,26 @@
                         <label for="js_title_label">JavaScript:</label>
                     </div>
                     <textarea disabled id="example_box" name="example_box" rows="10" cols="50">
-                        indow.addEventListener("load", function(){
-                        var nodes = document.
-                        querySelectorAll(".overlay");
-                        for(var i=0; i<nodes.length; i++){
-                        } 
-                        });
+            indow.addEventListener("load", function(){
+            var nodes = document.
+            querySelectorAll(".overlay");
+            for(var i=0; i<nodes.length; i++){
+            } 
+            });
                     
-                        var words = nodes[i].innerText;
-                        var html = "";
-                        var i2=0; i2<words.length; i2++){
-	                    ords[i2] == " ")html += 
-                        s[i2];
-		                 html += 
-                        an>"+words[i2]+"</span>"
-                        
-                        s[i].innerHTML = html;
+            var words = nodes[i].innerText;
+            var html = "";
+            var i2=0; i2<words.length; i2++){
+	        ords[i2] == " ")html += 
+            s[i2];
+		     html += 
+            an>"+words[i2]+"</span>"
+            
+            s[i].innerHTML = html;
                     </textarea>
+                    <div id="letters_gif">
+                        <img src="./img/letter_ex.gif" alt="letters_example">
+                    </div>
                 </div>
                 <h2>12. Анимация на снеговалеж</h2>
                 <div>
