@@ -6,95 +6,6 @@ body {
 	margin-right: 6%;
 }
 
-
-.title {
-	padding-top: 40px;
-	padding-bottom: 40px;
-	text-align: center;
-	font-weight: bold;
-	font-size: 450%;
-	font-family: "Montserrat", sans-serif;
-}
-
-.tenor-gif-embed {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 0;
-	margin-left: 65%;
-	margin-top: -18%;
-}
-
-#example_box {
-	width: 35%;
-	background-color: #E7ECEF;
-	border: 3px solid #a3cef1;
-	border-radius: 5px;
-	box-sizing: border-box;
-}	
-
-#text_1 {
-
-	padding-right: 40%;
-}
-
-#example_4
-{
-	margin-left: 50%;
-	margin-top: -24%;
-}
-
-#bubbles_gif
-{
-	margin-left: 50%;
-	margin-top: -30%;
-}
-#letters_gif
-{
-	margin-left: 50%;
-	margin-top: -35%;
-}
-
-/*navigation */
-ul {
-	list-style-type: none;
-	margin: 0;
-	overflow: hidden;
-	background-color: #184E77;
-	margin-left: -6%;
-	margin-right: -6%;
-	padding-left: 4%;
-
-}
-
-li {
-	float: left;
-	
-}
-
-li a {
-	display: block;
-	color: #E7ECEF;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-	background-color: #1E6091;
-}
-
-.example_1 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 0;
-	margin-left: 40%;
-	margin-top: -35%;
-	width: 60%;
-}
-
 h2 {
 	padding-top: 10px;
 	color: #6096BA;
@@ -110,6 +21,91 @@ h1 {
 .link {
 	color: #023047;
 	font-weight: bold;
+}
+
+.footer_headers
+{
+	margin-top: 50px;
+}
+
+/*examples*/
+#example_box {
+	width: 35%;
+	background-color: #E7ECEF;
+	border: 3px solid #a3cef1;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+.tenor-gif-embed {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	margin-left: 65%;
+	margin-top: -18%;
+}
+
+#text_1 {
+
+	padding-right: 40%;
+}
+
+.example_1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	margin-left: 40%;
+	margin-top: -35%;
+	width: 60%;
+}
+
+#example_4 {
+	margin-left: 50%;
+	margin-top: -24%;
+}
+
+#bubbles_gif {
+	margin-left: 50%;
+	margin-top: -30%;
+}
+
+#letters_gif {
+	margin-left: 50%;
+	margin-top: -35%;
+}
+
+/*navigation */
+.navbar {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	position: fixed;
+	background-color: #184E77;
+    align-items: center;
+    height: 40px;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.navbar li a {
+	display: block;
+	color: #E7ECEF;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navbar li a:hover {
+	background-color: #1E6091;
 }
 
 /* title animation */
@@ -135,7 +131,14 @@ body {
 	background-color: #dedede;
 }
 
-.title {
+.title 
+{
+	padding-top: 70px;
+	padding-bottom: 40px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 450%;
+	font-family: "Montserrat", sans-serif;
 	position: relative;
 	display: block;
 	margin: 0;
@@ -191,51 +194,3 @@ body {
 	}
 }
 
-/*dropdown navigation
-<style>
-/* Style The Dropdown Button */
-.example {
-	background-color: #4CAF50;
-	color: white;
-	padding: 16px;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .title_header {
-	position: relative;
-	display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #f1f1f1}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-	display: block;
-  }
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .title_header:hover .example {
-	background-color: #3e8e41;
-  }
